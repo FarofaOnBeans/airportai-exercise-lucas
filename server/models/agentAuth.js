@@ -9,5 +9,5 @@ const AgentAuth = new Schema({
   passwd: {type: String}
 });
 
-module.exports = mongoose.model('agentAuth', AgentAuth);
+module.exports = mongoose.model('AgentAuth', AgentAuth);
 

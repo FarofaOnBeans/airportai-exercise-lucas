@@ -7,5 +7,5 @@ const Agent = new Schema({
   lastName: {type: String}
 });
 
-module.exports = mongoose.model('agent', Agent);
+module.exports = mongoose.model('Agent', Agent);
 
