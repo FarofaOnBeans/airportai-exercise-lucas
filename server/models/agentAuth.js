@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 // This is to help isolating sensitive data from popular general queries regarding the Agent.
 
 const AgentAuth = new Schema({
-  agent: { type: Schema.Types.ObjectId, ref: 'agent', required: true },
+  agent: { type: mongoose.Types.ObjectId, ref: 'agent', required: true },
   passwd: {type: String}
-});
+}, {collection: 'AgentAuths'});
 
 module.exports = mongoose.model('AgentAuth', AgentAuth);
 
