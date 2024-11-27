@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node app.js",
+    "dev": "cross-env NODE_ENV=development node app.js",
     "test": "NODE_ENV=test mocha --recursive --inspect --exit test",
     "test-win": "set NODE_ENV=test&& mocha --recursive --inspect --exit test"
   },
