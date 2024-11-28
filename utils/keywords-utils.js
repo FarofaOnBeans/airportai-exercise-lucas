@@ -1,5 +1,5 @@
 const pos = require('pos');
-
+const _ = require('lodash');
 
 
 /**
@@ -49,6 +49,13 @@ function getProductKeywordsFromDescription(prompt){
    
 }
 
+function getProductKeywordsFromDescriptionAsTags(prompt){
+  let keywords = getProductKeywordsFromDescription(prompt);
+  return _.uniq(keywords.map((e) => e.word.toLowerCase()));
+  
+}
+
 module.exports = {
-  getProductKeywordsFromDescription: getProductKeywordsFromDescription
+  getProductKeywordsFromDescription: getProductKeywordsFromDescription,
+  getProductKeywordsFromDescriptionAsTags: getProductKeywordsFromDescriptionAsTags
 }
