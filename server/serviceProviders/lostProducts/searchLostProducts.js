@@ -6,7 +6,7 @@ const moment = require("moment");
  * @param {object} searchParams 
  * @param {string} searchParams.searchPrompt
  * @param {boolean} [searchParams.wasItFoundByOwner]
- * @param {Date} [searchParams.targetDateTime] Target Date time to query results based on the "registeredDateTime" field. It will fetch records one hour before and after said date.b 
+ * @param {Date|string} [searchParams.targetDateTime] Target Date time to query results based on the "registeredDateTime" field. It will fetch records one hour before and after said date.b 
  */
 async function searchLostProducts(searchParams){
   
@@ -16,14 +16,21 @@ async function searchLostProducts(searchParams){
 
   let findFilter = {};
   if (typeof searchParams.wasItFoundByOwner !== 'undefined') {
-    findFilter['wasItFoundByOwner'] = !!(searchParams.wasItFoundByOwner);
+    if (typeof searchParams.wasItFoundByOwner === 'string' && (['false', '0'].includes(searchParams.wasItFoundByOwner))) {
+      findFilter['wasItFoundByOwner'] = false;  
+    } else {
+      console.log('wasItFoundByOwner', searchParams.wasItFoundByOwner);
+      findFilter['wasItFoundByOwner'] = !!(searchParams.wasItFoundByOwner);
+    }
+    
   }
-  if (searchParams.targetDateTime instanceof Date) {
+
+  if (searchParams.targetDateTime instanceof Date || (searchParams.targetDateTime && moment(searchParams.targetDateTime).isValid())) {
     let beforeTargetTime = moment(searchParams.targetDateTime).subtract(1, 'hours').toDate();
     let afterTargetTime = moment(searchParams.targetDateTime).add(1, 'hours').toDate();
     findFilter['registeredDateTime'] = {$gte: beforeTargetTime, $lte: afterTargetTime};
   }
-  
+
   if (typeof searchParams.searchPrompt === 'string' && searchParams.searchPrompt !== '') {
     let keywords = keywordsUtils.getProductKeywordsFromDescription(searchParams.searchPrompt);
 
