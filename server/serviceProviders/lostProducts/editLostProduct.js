@@ -6,11 +6,15 @@ const InvalidFieldError = require('../errors/InvalidFieldError');
 const expectedTypes = require('../expectedTypes');
 const keywordUtils = require('../../../utils/keywords-utils');
 const _ = require('lodash');
+const mongoose = require('mongoose');
+
 /**
  * @typedef LostProductInfo
+ * @property {String} _id
  * @property {String} title
  * @property {String} description
  * @property {String[]} tags
+ * @property {String} wasItFoundByOwner
 */
 
 /**
@@ -18,10 +22,20 @@ const _ = require('lodash');
  * @param {string} agentId 
  * @param {LostProductInfo} lostProductInfo 
  */
-async function addLostProduct(agentId, lostProductInfo){
+async function editLostProduct(agentId, lostProductInfo){
   let agent = Agent.findById(agentId);
   if (!agent) {
     throw new AgentAdminNotFound(agentId);
+  }
+
+  if (!(lostProductInfo._id)) {
+    throw new FieldRequiredError('_id');
+  }
+  if (typeof lostProductInfo._id !== 'string') {
+    throw new InvalidFieldError('_id', {
+      receivedValue: lostProductInfo._id,
+      expectedType: expectedTypes.STRING
+    });
   }
   
   if (!(lostProductInfo.title)) {
@@ -55,22 +69,29 @@ async function addLostProduct(agentId, lostProductInfo){
     tags = _.uniq(keywords.map((e) => e.word.toLowerCase()));
   }
   
-  let newProduct = new Product({
-    title: lostProductInfo.title,
-    description: lostProductInfo.description,
-    registeredBy: agentId,
-    registeredDateTime: new Date(),
-    wasItFoundByOwner: false,
-    dateTimeFoundByOnwer: null,
-    tags: tags
+  let product = await Product.findById(new mongoose.Types.ObjectId(lostProductInfo._id));
 
-  });
+  if (!product) {
+    throw new BusinessLogicError(`Product with Id ${lostProductInfo._id} not found`, {httpStatus: 404});
+  }
 
-  await newProduct.save();
+  if (lostProductInfo.wasItFoundByOwner === true && product.wasItFoundByOwner === false) {
+    product.dateTimeFoundByOnwer = new Date();
+  }
+  if (lostProductInfo.wasItFoundByOwner === false && product.wasItFoundByOwner === true) {
+    product.dateTimeFoundByOnwer = null;
+  }
 
-  return newProduct;
+  product.title = lostProductInfo.title;
+  product.description = lostProductInfo.description;
+  product.tags = tags;
+  product.wasItFoundByOwner = lostProductInfo.wasItFoundByOwner;
+
+  await product.save();
+
+  return product;
   
 
 }
 
-module.exports = addLostProduct;
+module.exports = editLostProduct;
