@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const Agent = new Schema({
   email: {type: String, required: true, index: 1},
-  firstName: {Type: String, required: true},
+  firstName: {type: String, required: true},
   lastName: {type: String}
 }, {collection: 'Agents'});
 
