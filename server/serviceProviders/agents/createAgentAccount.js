@@ -126,9 +126,6 @@ async function createAgentAccount(actionAgentId, info){
     
   })
   */
-  console.log('newAgent', newAgent);
-
-  console.log('newAgentAuthRes', newAgentAuth);
 
   return {
     agent: newAgent,

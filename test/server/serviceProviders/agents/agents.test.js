@@ -27,8 +27,6 @@ describe('Agents\'s Service Provider', function(){
         password: 'Test145*'
       });
 
-      console.log(res);
-
       chai.assert.containsAllKeys(res, ['agent', 'agentAuth']);
       chai.assert.isOk(mongoose.Types.ObjectId.isValid(res.agent._id));
       chai.assert.isOk(mongoose.Types.ObjectId.isValid(res.agentAuth._id));

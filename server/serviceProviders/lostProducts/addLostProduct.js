@@ -5,7 +5,7 @@ const FieldRequiredError = require('../errors/FieldRequiredError');
 const InvalidFieldError = require('../errors/InvalidFieldError');
 const expectedTypes = require('../expectedTypes');
 const keywordUtils = require('../../../utils/keywords-utils');
-
+const _ = require('lodash');
 /**
  * @typedef LostProductInfo
  * @property {String} title
@@ -43,8 +43,11 @@ async function addLostProduct(agentId, lostProductInfo){
     });
   }
 
-  let keywords = keywordUtils.getProductKeywordsFromDescription(lostProductInfo.description);
-  let tags = keywords.map((e) => e.word);
+  let keywordsDescription = keywordUtils.getProductKeywordsFromDescription(lostProductInfo.description);
+  let keywordsTitle = keywordUtils.getProductKeywordsFromDescription(lostProductInfo.title);
+
+  let keywords = keywordsDescription.concat(keywordsTitle);
+  let tags = _.uniq(keywords.map((e) => e.word.toLowerCase()));
   
   let newProduct = new Product({
     title: lostProductInfo.title,
@@ -57,9 +60,9 @@ async function addLostProduct(agentId, lostProductInfo){
 
   });
 
-  let res = await newProduct.save();
+  await newProduct.save();
 
-  return res;
+  return newProduct;
   
 
 }
