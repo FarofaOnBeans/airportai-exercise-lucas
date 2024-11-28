@@ -23,7 +23,7 @@ const mongoose = require('mongoose');
  * @param {LostProductInfo} lostProductInfo 
  */
 async function editLostProduct(agentId, lostProductInfo){
-  let agent = Agent.findById(agentId);
+  let agent = Agent.findById(new mongoose.Types.ObjectId(agentId));
   if (!agent) {
     throw new AgentAdminNotFound(agentId);
   }

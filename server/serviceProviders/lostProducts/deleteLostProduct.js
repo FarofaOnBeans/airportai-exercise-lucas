@@ -22,7 +22,7 @@ const _ = require('lodash');
  * @param {LostProductInfo} lostProductInfo 
  */
 async function deleteLostProduct(agentId, lostProductInfo){
-  let agent = Agent.findById(agentId);
+  let agent = Agent.findById(new mongoose.Types.ObjectId(agentId));
   if (!agent) {
     throw new AgentAdminNotFound(agentId);
   }

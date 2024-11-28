@@ -1,5 +1,4 @@
 const Agent = require('../../models/agent');
-const agentAuth = require('../../models/agentAuth');
 const AgentAuth = require('../../models/agentAuth');
 const getPublicAppSetupInfo = require('../appSetup/getPublicAppSetupInfo');
 const BusinessLogicError = require('../errors/BusinessLogicError');
@@ -25,10 +24,10 @@ async function createAgentAccount(actionAgentId, info){
   if (!actionAgentId) {
     let appSetup = await getPublicAppSetupInfo();
     if (appSetup.isAgentSetup) {
-      throw new BusinessLogicError('Not authorized.', {httpStatus: 401});
+      throw new BusinessLogicError('Not authorized. You need to be an agent in order to create another account.', {httpStatus: 403});
     }
   } else {
-    let agent = await Agent.findById(actionAgentId);
+    let agent = await Agent.findById(new mongoose.Types.ObjectId(actionAgentId));
     if (!agent) {
       throw new AgentAdminNotFound();
     }
@@ -73,6 +72,10 @@ async function createAgentAccount(actionAgentId, info){
     });
   }
 
+  let existentAgentWithEmail = await Agent.findOne({email: info.email});
+  if (existentAgentWithEmail) {
+    throw new BusinessLogicError('An account was already registered with that e-mail.');
+  }
 
   if (!(info.password)) {
     throw new FieldRequiredError('password');
