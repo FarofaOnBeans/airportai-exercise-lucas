@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-/** This would be in a environemnt variable and not stored in the repo */
+/** This would be in a environment variable and not stored in the repo */
 let encryptionKey = 'v0HgR6d4C7FFVOMkAK90oKwlO';
 
 function generateSessionToken(agent){
