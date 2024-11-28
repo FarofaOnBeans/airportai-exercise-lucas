@@ -1,3 +1,4 @@
+require('@dotenvx/dotenvx').config({path: `.env.${process.env.NODE_ENV}`});
 /**
  * App entrypoint.
  */
