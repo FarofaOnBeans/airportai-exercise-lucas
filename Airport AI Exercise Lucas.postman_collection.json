@@ -31,7 +31,117 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lucas.gomes@hotmail.com\",\r\n    \"password\": \"Test1234*\",\r\n    \"firstName\": \"Lucas\",\r\n    \"lastName\": \"Gomes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "X-HTTP-Method-Override"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "126"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7e-3MAa4lfcUDtich9Bq2azynE44hc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Nov 2024 15:31:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"email\": \"lucas.gomes@hotmail.com\",\n        \"firstName\": \"Lucas\",\n        \"lastName\": \"Gomes\",\n        \"_id\": \"67488cde6508320f0f25dc70\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Login",
@@ -39,7 +149,117 @@
 				"method": "GET",
 				"header": []
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lucas.gomes@hotmail.com\",\r\n    \"password\": \"Test1234*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "X-HTTP-Method-Override"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "418"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a2-Ri3NVui+CSpCVskQMwkLHAuSBok\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Nov 2024 15:32:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"agent\": {\n            \"_id\": \"67488cde6508320f0f25dc70\",\n            \"email\": \"lucas.gomes@hotmail.com\",\n            \"firstName\": \"Lucas\",\n            \"lastName\": \"Gomes\",\n            \"__v\": 0\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2VudCI6eyJfaWQiOiI2NzQ4OGNkZTY1MDgzMjBmMGYyNWRjNzAiLCJlbWFpbCI6Imx1Y2FzLmdvbWVzQGhvdG1haWwuY29tIiwiZmlyc3ROYW1lIjoiTHVjYXMiLCJsYXN0TmFtZSI6IkdvbWVzIiwiX192IjowfSwiaWF0IjoxNzMyODA3OTM1fQ.oPYTVZs6NulvZwvcOTaU6kbcWK0fsftSZvtRvv7MUIc\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Add Product",
@@ -48,7 +268,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Samsung S4\",\r\n    \"description\": \"Samsung S4 left near a bench.\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Samsung S9\",\r\n    \"description\": \"Samsung S9 left at the airplane of flight TPP-512.\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -66,7 +286,226 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Add Samsung S4",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Samsung S4\",\r\n    \"description\": \"Samsung S4 left near a bench.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "X-HTTP-Method-Override"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "296"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"128-s9j3JFK23x4WXxw3hRJnQso/nFk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Nov 2024 15:39:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"title\": \"Samsung S4\",\n        \"description\": \"Samsung S4 left near a bench.\",\n        \"registeredBy\": \"67486a90d3b1eaf9e5973e72\",\n        \"registeredDateTime\": \"2024-11-28T15:39:34.921Z\",\n        \"wasItFoundByOwner\": false,\n        \"dateTimeFoundByOnwer\": null,\n        \"tags\": [\n            \"samsung\",\n            \"s4\",\n            \"bench\"\n        ],\n        \"_id\": \"67488eb6f59ba8a308823638\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "Add Samsung S9",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Samsung S9\",\r\n    \"description\": \"Samsung S9 left at the airplane of flight TPP-512.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "X-HTTP-Method-Override"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "339"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"153-0XRfvRRMS8kjBCGcYbExBOx3QzM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Nov 2024 15:40:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"title\": \"Samsung S9\",\n        \"description\": \"Samsung S9 left at the airplane of flight TPP-512.\",\n        \"registeredBy\": \"67486a90d3b1eaf9e5973e72\",\n        \"registeredDateTime\": \"2024-11-28T15:40:34.625Z\",\n        \"wasItFoundByOwner\": false,\n        \"dateTimeFoundByOnwer\": null,\n        \"tags\": [\n            \"samsung\",\n            \"s9\",\n            \"airplane\",\n            \"flight\",\n            \"tpp-512\"\n        ],\n        \"_id\": \"67488ef2f59ba8a30882363a\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Get Products",
@@ -74,7 +513,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/products?searchPrompt=I left my phone near the bench",
+					"raw": "localhost:3000/products?searchPrompt=I left my phone near the bench&targetDateTime=2024-11-28T14:39:34.921Z&wasItFoundByOwner=0",
 					"host": [
 						"localhost"
 					],
@@ -86,11 +525,130 @@
 						{
 							"key": "searchPrompt",
 							"value": "I left my phone near the bench"
+						},
+						{
+							"key": "targetDateTime",
+							"value": "2024-11-28T14:39:34.921Z"
+						},
+						{
+							"key": "wasItFoundByOwner",
+							"value": "0"
 						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get Products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products?searchPrompt=I left my phone near the bench&targetDateTime=2024-11-28T14:39:34.921Z&wasItFoundByOwner=0",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "searchPrompt",
+									"value": "I left my phone near the bench"
+								},
+								{
+									"key": "targetDateTime",
+									"value": "2024-11-28T14:39:34.921Z"
+								},
+								{
+									"key": "wasItFoundByOwner",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "309"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"135-VT/EbwPgmlv8FzHx37r47RXeMOA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Nov 2024 15:48:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": [\n        {\n            \"_id\": \"67488eb6f59ba8a308823638\",\n            \"noOfTagMatches\": 1,\n            \"tags\": [\n                \"samsung\",\n                \"s4\",\n                \"bench\"\n            ],\n            \"title\": \"Samsung S4\",\n            \"description\": \"Samsung S4 left near a bench.\",\n            \"registeredBy\": \"67486a90d3b1eaf9e5973e72\",\n            \"registeredDateTime\": \"2024-11-28T15:39:34.921Z\",\n            \"wasItFoundByOwner\": false,\n            \"dateTimeFoundByOnwer\": null\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Delete Product",
