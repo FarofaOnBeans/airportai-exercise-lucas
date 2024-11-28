@@ -49,7 +49,7 @@ describe('Agents\'s Service Provider', function(){
         }); 
       } catch (e) {
         if (e instanceof BusinessLogicError) {
-          chai.assert.isOk((e.httpStatus === 401), 'it did not allow to create an account');
+          chai.assert.isOk((e.httpStatus === 403), 'it did not allow to create an account');
           return;
         }
         throw e;

@@ -15,8 +15,8 @@ async function searchLostProducts(searchParams){
   }
 
   let findFilter = {};
-  if (typeof searchParams.wasItFoundByOwner === 'boolean') {
-    findFilter['wasItFoundByOwner'] = searchParams.wasItFoundByOwner;
+  if (typeof searchParams.wasItFoundByOwner !== 'undefined') {
+    findFilter['wasItFoundByOwner'] = !!(searchParams.wasItFoundByOwner);
   }
   if (searchParams.targetDateTime instanceof Date) {
     let beforeTargetTime = moment(searchParams.targetDateTime).subtract(1, 'hours').toDate();
@@ -49,6 +49,7 @@ async function searchLostProducts(searchParams){
           registeredBy: 1,
           registeredDateTime: 1,
           wasItFoundByOwner: 1,
+          dateTimeFoundByOnwer: 1
         }
       },
       {$unwind:"$tags"},
@@ -71,6 +72,9 @@ async function searchLostProducts(searchParams){
         },
         wasItFoundByOwner: {
           $first: "$wasItFoundByOwner"
+        },
+        dateTimeFoundByOnwer: {
+          $first: "$dateTimeFoundByOnwer"
         }
       }},
       {$sort:{noOfTagMatches:-1, registeredDateTime: -1, title: -1}},
@@ -81,7 +85,8 @@ async function searchLostProducts(searchParams){
         description: 1,
         registeredBy: 1,
         registeredDateTime: 1,
-        wasItFoundByOwner: 1
+        wasItFoundByOwner: 1,
+        dateTimeFoundByOnwer: 1
       }}
     ];
 
